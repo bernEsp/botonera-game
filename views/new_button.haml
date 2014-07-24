@@ -1,0 +1,12 @@
+%form{ action: '/button', method: 'post', multipart: "true", enctype:"multipart/form-data" }
+  %label
+    Texto del boton (100c)
+  %input{type: 'text', name: 'title', id:'title'}
+  %label
+    Sonido del boton
+  %input{type: 'file', name: 'sound', id:'sound'}
+  %label
+    Imagen del boton
+  %input{type: 'file', name: 'image', id:'image'}
+  %button
+    Crear nuevo boton
