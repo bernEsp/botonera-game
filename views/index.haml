@@ -12,6 +12,8 @@
 				%img{src:"images/lagrimita.jpg", style:"display: block;float:left; margin:15px", height:"50px", width:"90px"}
 				%a{href:"#", class: "button button-3d-highlight button-circle", onclick:"$(this).find('audio')[0].play()", style:"float:left;clear:both;"}
 					Que barato!
-					%audio{controls:true, style:"display:none"}
-						%source{src:'/quebarato.mp3', type:"audio/mpeg"}
+
+					%div{style:"display:none"}
+						%audio{controls:true, style:"display:none"}
+							%source{src:'/quebarato.mp3', type:"audio/mpeg"}
 				%link{rel: :stylesheet, type:"text/css", href:"css/buttons.css"}
