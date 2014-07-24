@@ -1,0 +1,12 @@
+production:
+  sessions:
+    default:
+      database: botonera-game
+      hosts:
+        - localhost:27017
+development:
+  sessions:
+    default:
+      database: botonera-game
+      hosts:
+        - localhost:27017

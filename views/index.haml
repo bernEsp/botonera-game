@@ -1,19 +1,19 @@
 !!! 5
 %html
-	%head
-		%title
-			Botonera
-	%script{src:"http://code.jquery.com/jquery-1.10.1.min.js"}
-	%script{type:"text/javascript", src:"js/buttons.js"}
+  %head
+    %title
+      Botonera
+  %script{src:"http://code.jquery.com/jquery-1.10.1.min.js"}
+  %script{type:"text/javascript", src:"js/buttons.js"}
 
-	%body
-		%div{style:"margin: 60px 10px; width: 700px"}
-			%div{style:"width:140px, float:left;"}
-				%img{src:"images/lagrimita.jpg", style:"display: block;float:left; margin:15px", height:"50px", width:"90px"}
-				%a{href:"#", class: "button button-3d-highlight button-circle", onclick:"$(this).find('audio')[0].play()", style:"float:left;clear:both;"}
-					Que barato!
-
-					%div{style:"display:none"}
-						%audio{controls:true, style:"display:none"}
-							%source{src:'/quebarato.mp3', type:"audio/mpeg"}
-				%link{rel: :stylesheet, type:"text/css", href:"css/buttons.css"}
+  %body
+    %div{style:"margin: 60px 10px; width: 700px"}
+      = @buttons.each do |button|
+        %div{style:"width:140px;float:left;"}
+          %img{src:"#{button.image}", style:"display: block;float:left; margin:15px", height:"50px", width:"90px"}
+          %a{href:"#", class: "button button-3d-highlight button-circle", onclick:"$(this).find('audio')[0].play()", style:"float:left;clear:both;"}
+            = button.title
+            %div{style:"display:none"}
+              %audio{controls:true, style:"display:none"}
+                %source{src:"#{button.sound}", type:"audio/mpeg"}
+    %link{rel: :stylesheet, type:"text/css", href:"css/buttons.css"}
