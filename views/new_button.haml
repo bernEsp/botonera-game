@@ -1,12 +1,17 @@
-%form{ action: '/button', method: 'post', multipart: "true", enctype:"multipart/form-data" }
+%span{style:"color:red"}
+  = @error if @error
+%form{ action: '/button', method: 'post', multipart: "true", enctype:"multipart/form-data", class:"new_method" }
   %label
-    Texto del boton (100c)
+    Texto del boton (40ch)
   %input{type: 'text', name: 'title', id:'title'}
+  %br
   %label
     Sonido del boton
   %input{type: 'file', name: 'sound', id:'sound'}
+  %br
   %label
     Imagen del boton
   %input{type: 'file', name: 'image', id:'image'}
+  %br
   %button
     Crear nuevo boton
