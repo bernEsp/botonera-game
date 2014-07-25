@@ -14,9 +14,9 @@
       = @buttons.each do |button|
         %div{style:"width:140px;float:left;"}
           %img{src:"#{button.image.thumb.url}", style:"display: block;float:left; margin:15px", height:"50px", width:"90px"}
-          %div{style:"display:none"}
-            %a{href:"#", class: "button button-3d-highlight button-circle", onclick:"$(this).find('audio')[0].play()", style:"float:left;clear:both;"}
-              = button.title
+          %a{href:"#", class: "button button-3d-highlight button-circle", onclick:"$(this).find('audio')[0].play()", style:"float:left;clear:both;"}
+            = button.title
+            %div{style:"display:none"}
               %audio{controls:'true', style:"display:none"}
                 %source{src:"#{button.sound.url}", type:"audio/mpeg"}
     %link{rel: :stylesheet, type:"text/css", href:"css/buttons.css"}
