@@ -1,9 +1,5 @@
 production:
-  sessions:
-    default:
-      database: botonera-game
-      hosts:
-        - localhost:27017
+  uri: <%= ENV['MONGOHQ_URL']%>
 development:
   sessions:
     default:
