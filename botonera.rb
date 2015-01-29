@@ -6,10 +6,6 @@ require 'carrierwave'
 require 'carrierwave/mongoid'
 require 'mini_magick'
 
-configure :production do
-  require 'newrelic_rpm'
-end
-
 Mongoid.load!("config/mongoid.yml")
 
 CarrierWave.configure do |config|
@@ -58,6 +54,9 @@ class Button
 end
 
 class Botonera < Sinatra::Base
+  configure :production do
+    require 'newrelic_rpm'
+  end
   get "/" do
     @buttons = Button.all
     haml :index
