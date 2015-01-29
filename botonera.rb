@@ -6,6 +6,10 @@ require 'carrierwave'
 require 'carrierwave/mongoid'
 require 'mini_magick'
 
+configure :production do
+  require 'newrelic_rpm'
+end
+
 Mongoid.load!("config/mongoid.yml")
 
 CarrierWave.configure do |config|
